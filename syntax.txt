@@ -1,0 +1,14 @@
+/----------\
+| Comments |
+\----------/
+
+# IF A LINE OF CODE INCLUDES A # SYMBOL,
+# THE SYMBOL AND ANY TEXT FOLLOWING IT
+# WILL BE IGNORED BY THE INTERPRETER
+
+/--------\
+| Labels |
+\--------/
+
+LABEL:          # THIS LABEL IS ON A LINE BY ITSELF
+L: MOV 3, ACC   # THIS LABEL IS ON A LINE WITH CODE

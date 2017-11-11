@@ -1,0 +1,82 @@
+/-----------------------\
+| Manipulation Commands |
+\-----------------------/
+
+# MOV #
+Syntax: MOV <SRC>, <DST>
+Reads a value from the register <SRC> and
+writes that value to the register <DST>.
+
+# SAV #
+Syntax: SAV
+Overwrites BAK with the current value
+of ACC. Does not affect ACC directly.
+
+# SWP #
+Syntax: SWP
+Exchanges the values of ACC and BAK.
+
+/---------------------\
+| Arithmetic Commands |
+\---------------------/
+
+# ADD #
+Syntax: ADD <SRC>
+Increments ACC by the value read from
+<SRC> and stores the result in ACC.
+
+# SUB #
+Syntax: SUB <SRC>
+Decrements ACC by the value read from
+<SRC> and stores the result in ACC.
+
+# NEG #
+Syntax: NEG
+Arithmetically negates the value of ACC and stores
+the result in ACC. Has no effect if ACC is 0.
+
+/---------------\
+| Jump Commands |
+\---------------/
+
+# JMP #
+Syntax: JMP <LABEL>
+Transfer execution unconditionally. The instruction
+immediately following <LABEL> will be executed next,
+and execution will continue in order from that point.
+
+# JEZ #
+Syntax: JEZ <LABEL>
+Transfer execution conditionally. The instruction
+following <LABEL> will be executed next if ACC is 0;
+otherwise, execution proceeds normally.
+
+# JNZ #
+Syntax: JNZ <LABEL>
+Transfer execution conditionally. Same as JEZ,
+but only transfers if ACC is not equal to 0.
+
+# JGZ #
+Syntax: JGZ <LABEL>
+Transfer execution conditionally. Same as JEZ,
+but only transfers if ACC is greater than 0.
+
+# JLZ #
+Syntax: JLZ <LABEL>
+Transfer execution conditionally. Same as JEZ,
+but only transfers if ACC is less than 0.
+
+# JRO #
+Syntax: JRO <SRC>
+Transfer execution unconditionally. The instruction
+at the offset specified by <SRC> from the current line
+will be executed next.
+
+/----------------\
+| Other Commands |
+\----------------/
+
+# NOP #
+Syntax: NOP
+Description:
+Pseudo-command that is interpreted as ADD NIL.
